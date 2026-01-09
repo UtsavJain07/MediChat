@@ -126,3 +126,10 @@ def add_new_data(docsearch, content, source, page_no):
         metadata={"source":source, "page": page_no}
     )
     docsearch.add_documents(documents=[new_data])
+
+def use_existing_index(index_name, embedding):
+    docsearch = PineconeVectorStore.from_existing_index(
+            index_name=index_name,
+            embedding=embedding
+        )
+    return docsearch
