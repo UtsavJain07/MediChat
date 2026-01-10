@@ -3,7 +3,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from typing import List
 from langchain.schema import Document
 from langchain_community.embeddings import HuggingFaceEmbeddings #deprecated
-# from langchain_huggingface import HuggingFaceEmbeddings  3 ned to install langchain-huggingface
+# from langchain_huggingface import HuggingFaceEmbeddings  # need to install langchain-huggingface
 from pinecone import ServerlessSpec
 from langchain_pinecone import PineconeVectorStore
 
@@ -27,7 +27,7 @@ def load_pdf_files(path):
     return documents
 
 
-def extract_data(cachePath="C:/Utsav Jain/SelfProjects/MediChatProject/MediChat/data/extracted_data.joblib", pdfPath="C:/Utsav Jain/SelfProjects/MediChatProject/MediChat/data"): 
+def extract_data(cachePath="data/extracted_data.joblib", pdfPath="data"): 
     CACHE_PATH = cachePath
     extracted_data = None
 

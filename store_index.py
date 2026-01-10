@@ -11,7 +11,7 @@ os.environ["PINECONE_API_KEY"] = os.getenv("PINECONE_API_KEY")
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 
-extracted_data = extract_data(cachePath="C:/Utsav Jain/SelfProjects/MediChatProject/MediChat/data/extracted_data.joblib")
+extracted_data = extract_data(cachePath="data/extracted_data.joblib")
 minimal_docs = filter_to_minimal_docs(extracted_data)
 texts_chunk = text_split(minimal_docs)
 embedding = download_embeddings()

@@ -64,9 +64,14 @@ def chat():
     print("Model: ", response["answer"])
     return str(response["answer"])
 
+@app.route("/health")
+def health():
+    """Health check endpoint for container orchestration (ECS/ELB)"""
+    return jsonify({"status": "healthy"}), 200
+
 
 
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=False)
